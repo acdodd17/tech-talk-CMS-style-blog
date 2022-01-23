@@ -13,23 +13,22 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <header>
-            <h1 id="blog">
-                <a href="/">Tech Talk</a>
-            </h1>
-            <nav>
-                {{#if loggedIn}}
-                <div id="dash"><a href="/dashboard" >Dashboard</a></div>
-                <div id="logout"><button id="logout">Logout</button></div>
-                {{else}}
-                <div id="login"><a href="/login">Login</a></div>
-                {{/if}}
-            </nav>
-        </header>
-    </div>
-    
-    <div class="container">
+  
+    <header class="mb-4">
+        <h1 id="blog">
+            <a href="/">Tech Talk</a>
+        </h1>
+        <nav>
+            {{#if loggedIn}}
+            <div id="dash"><a href="/dashboard" >Dashboard</a></div>
+            <div id="logout"><button id="logout">Logout</button></div>
+            {{else}}
+            <div id="login"><a href="/login">Login</a></div>
+            {{/if}}
+        </nav>
+    </header>
+
+    <div class="container mb-4">
         <main>
             {{{ body }}}
         </main>

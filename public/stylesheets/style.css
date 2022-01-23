@@ -1,7 +1,8 @@
 
 
-h1, h2, a, button, .title  {
+h1, h2, h3, a, button, .title  {
   font-family: 'Mochiy Pop P One', sans-serif;
+  color: #01303f;
 }
 
 p, input, footer, .meta, label, ol li{
@@ -9,12 +10,14 @@ p, input, footer, .meta, label, ol li{
 }
 
 header {
-  background-color: #aaaaaa;
+  background-color: #d4f0fc;
   margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
+
 
 nav {
   display:flex;
@@ -28,12 +31,11 @@ nav {
 
 a {
   text-decoration: none;
-  color: #1a472a
+  
 }
 
-a:hover {
-  color: white;
-  background-color: #2a623d;
+a:hover, .title h2:hover {
+  color: #02a9f7;
 }
 
 label {
@@ -42,21 +44,21 @@ label {
 
 button {
   border-radius: 10px;
-  background-color: #1a472a;
-  color: white;
+  background-color: #89d6fb;
 }
 
 button:hover {
-  background-color: white;
-  color: #1a472a;
+  background-color: #02a9f7;
+  color: #d4f0fc;
 }
 
 #username {
   font-weight: bold;
+  color: #02a9f7;
 }
 
 .post {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #02577a;
 }
 
 .post-content {
@@ -65,10 +67,19 @@ button:hover {
 
 input {
   word-wrap: break-word;
+  border-radius: 5px;
+}
+
+.data {
+  margin: 5px;
+}
+
+.comment:nth-child(odd) {
+  background-color: #d4f0fc;
 }
 
 footer {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #02577a;
   display: flex;
   justify-content: center;
   padding: 1%;

@@ -3,7 +3,9 @@
     
     {{#if posts.length}}
     <section class="col">
-      <h2 class="border-bottom mb-2">Your Posts</h2>
+      <div class="dashboard-heading border-bottom border-2">
+        <h2>Your Posts</h2>
+      </div>
       <ol>
         {{#each posts as |post|}}
         <li>
@@ -15,9 +17,10 @@
     </section>
     {{/if}}
     <section class="col-4 border-start">
-      <h2 class="border-bottom">Create New Post</h2>
-
-      <form class="new-post-form">
+      <div class="dashboard-heading text-center">
+        <h2>Create New Post</h2>
+      </div>
+      <form class="new-post-form text-end">
         <div class="data m-2">
           <label for="post-title">Title</label>
           <input type="text" id="post-title" name="post-title" />
