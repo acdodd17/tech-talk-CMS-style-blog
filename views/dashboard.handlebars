@@ -1,31 +1,36 @@
-<section>
-  <h2>Create New Post</h2>
+<div class="container">
+  <div class="row">
+    
+    {{#if posts.length}}
+    <section class="col">
+      <h2 class="border-bottom mb-2">Your Posts</h2>
+      <ol>
+        {{#each posts as |post|}}
+        <li>
+          {{> post-info post}}
+          <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+        </li>
+        {{/each}}
+      </ol>
+    </section>
+    {{/if}}
+    <section class="col-4 border-start">
+      <h2 class="border-bottom">Create New Post</h2>
 
-  <form class="new-post-form">
-    <div>
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
-    </div>
-    <div>
-      <label for="post-content">Post</label>
-      <input id="post-content" name="post-content" />
-    </div>
-    <button type="submit" class="btn">Create</button>
-  </form>
-</section>
+      <form class="new-post-form">
+        <div class="data m-2">
+          <label for="post-title">Title</label>
+          <input type="text" id="post-title" name="post-title" />
+        </div>
+        <div class="data m-2">
+          <label for="post-content">Post</label>
+          <input id="post-content" name="post-content" />
+        </div>
+        <button type="submit">Create</button>
+      </form>
+    </section>
+  </div>
+</div>
 
-{{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
-  <ol>
-    {{#each posts as |post|}}
-    <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-    </li>
-    {{/each}}
-  </ol>
-</section>
-{{/if}}
 
 <script src="/javascript/add-post.js"></script>

@@ -1,10 +1,10 @@
-<article class="post">
+<article class="post mb-2">
     <div class="title">
         <h2 >{{title}}</h2>
-        <p>({{post_content}})</p>
+        <p>{{post_content}}</p>
     </div>
     <div class="meta">
-        {{format_date created_at}} by {{user.username}}
+         Posted by <span id="username">{{user.username}}</span> on {{format_date created_at}}
         <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
     </div>
 </article>
