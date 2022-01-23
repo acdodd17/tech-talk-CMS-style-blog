@@ -1,15 +1,7 @@
 {{!-- load post data --}}
-<article class="post">
-    <div class="title">
-        <h2 >{{post.title}}</h2>
-        <p>({{post.post_content}})</p>
-    </div>
-    <div class="meta">
-        {{post.created_at}} by {{post.user.username}}
-        <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
-    </div>
-</article>
+{{> post-info post}}
 
+{{#if loggedIn}}
 <form class="comment-form">
   <div>
     <textarea name="comment-body"></textarea>
@@ -19,18 +11,10 @@
     <button type="submit">Add Comment</button>
   </div>
 </form>
+{{/if}}
 
-<div class="comments">
-  {{#each post.comments as |comment|}}
-  <section class="comment">
-    <div class="meta">
-      {{user.username}} on {{created_at}}
-    </div>
-    <div class="text">
-      {{comment_text}}
-    </div>
-  </section>
-  {{/each}}
-</div>
+{{> comments post.comments}}
 
+{{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
+{{/if}}
