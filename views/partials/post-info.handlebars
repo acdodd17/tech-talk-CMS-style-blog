@@ -1,11 +1,14 @@
 <article class="post mb-2">
-    <div class="title">
-        <a href="/post/{{id}}"><h2>{{title}}</h2></a>
-        <p>{{post_content}}</p>
-    </div>
-    <div class="meta">
-        
+    <div class="title d-flex justify-content-between">
+        <a href="/post/{{id}}"><h2>{{title}}</h2></a> 
+        <div class="meta">
         <span>Posted on {{format_date created_at}} by <span id="username">{{user.username}}</span> </span>
+        
+    </div>
+    </div>
+    <div>
+        <p>{{post_content}}</p>
         <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
     </div>
+    
 </article>
